@@ -65,7 +65,7 @@ const extractZip = async () => {
 
       fs.writeFileSync(`test/png/${file}.png`, output);
 
-      FILE_NAMES.push({ name });
+      FILE_NAMES.push({ file });
 
     });
 
