@@ -32,12 +32,12 @@ const List = {
     view: (ctrl) => {
         return ctrl
             .glyphs()
-            .sort((a, b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0)
+            .sort((a, b) => a.file > b.file ? 1 : a.file < b.file ? -1 : 0)
             .filter(ctrl.visible)
             .map(glyph => m('div.col-md-1.col-sm-2.col-xs-3.icon-block.text-center', [
-                m(`i.gi.gi-${glyph.name}.icon-md`, { style: { color: ctrl.fgColor() }}),
+                m(`i.gi.gi-${glyph.file}.icon-md`, { style: { color: ctrl.fgColor() }}),
                 m('br'),
-                m(`a[target="_blank"][href="./svg/${glyph.name}.svg"]`, glyph.name)
+                m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file)
             ]));
     }
 };
@@ -45,7 +45,7 @@ const List = {
 const Page = {
     controller: function() {
         this.list = List.controller({
-            visible: (item) => item.name.indexOf(this.filter.searchTerm()) > -1,
+            visible: (item) => item.file.indexOf(this.filter.searchTerm()) > -1,
             fgColor: () => this.foregroundColor.fgColor()
         });
 
