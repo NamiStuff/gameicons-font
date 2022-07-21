@@ -23,7 +23,7 @@ const iconFont = async () => {
       baseSelector: '.gi'
     },
     types: ['woff', 'eot', 'ttf'],
-    startCodepoint: 0xF000,
+    startCodepoint: 0xE000,
     normalize: true
   }, () => {
     console.log('webfont generated');
