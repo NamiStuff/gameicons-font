@@ -8,7 +8,7 @@ const Filter = {
         this.searchTerm = m.prop('');
     },
     view: (ctrl) => {
-        return m('input.form-control', { placeholder: 'Filter icons...', oninput: m.withAttr('value', ctrl.searchTerm) });
+        return m('input.form-control', { placeholder: 'Filtrar iconos...', oninput: m.withAttr('value', ctrl.searchTerm) });
     }
 };
 
@@ -17,7 +17,7 @@ const ForegroundColor = {
         this.fgColor = m.prop('');
     },
     view: (ctrl) => {
-        return m('input.form-control', { placeholder: 'Set FG Color', oninput: m.withAttr('value', ctrl.fgColor) });
+        return m('input.form-control', { placeholder: 'Color de los iconos', oninput: m.withAttr('value', ctrl.fgColor) });
     }
 };
 
@@ -35,7 +35,7 @@ const List = {
             .sort((a, b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0)
             .filter(ctrl.visible)
             .map(glyph => m('div.col-md-1.col-sm-2.col-xs-3.icon-block.text-center', [
-                m(`i.game-icon.game-icon-${glyph.name}.icon-md`, { style: { color: ctrl.fgColor() }}),
+                m(`i.gi.gi-${glyph.name}.icon-md`, { style: { color: ctrl.fgColor() }}),
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.name}.svg"]`, glyph.name)
             ]));
