@@ -19,8 +19,8 @@ const iconFont = async () => {
     fontName: 'game-icons',
     css: true,
     templateOptions: {
-      classPrefix: 'game-icon-',
-      baseSelector: '.game-icon'
+      classPrefix: 'gi-',
+      baseSelector: '.gi'
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xF000,
