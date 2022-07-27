@@ -4,6 +4,15 @@
 }
 
 .icon-block {
-    min-height: 185px;
-    max-height: 185px;
+    min-height: 150px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-block > br {
+    display: none;
 }
