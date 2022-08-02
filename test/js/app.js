@@ -70,4 +70,7 @@ m.mount(document.getElementById('page'), Page);
 
 var result   = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
 var iconToUnicode = "\\" + result.slice(1, -1).codePointAt(0).toString(16);
-document.querySelector('.icon-code').innerHTML = iconToUnicode;
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.icon-code').innerHTML = iconToUnicode;
+});
