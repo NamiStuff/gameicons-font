@@ -30,5 +30,14 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/0.2.3/mithril.min.js"></script>
     <script src="./js/app.js"></script>
+    <script>
+	    var icon = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
+	    var iconToUnicode = "\\" + icon.slice(1, -1).codePointAt(0).toString(16);
+
+	    var iconList = document.getElementsByClassName("icon-block");
+	    for (var i = 0; i < iconList.length; i++) {
+		    document.querySelector('.icon-code').innerHTML = iconToUnicode;
+        }
+    </script>
 </body>
 </html>
