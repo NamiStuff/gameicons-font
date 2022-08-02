@@ -31,13 +31,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/0.2.3/mithril.min.js"></script>
     <script src="./js/app.js"></script>
     <script>
-	    var icon = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
-	    var iconToUnicode = "\\" + icon.slice(1, -1).codePointAt(0).toString(16);
+	var iconList = document.getElementsByClassName('icon-code');
+	var icon = document.getElementsByClassName('icon-md')
 
-	    var iconList = document.getElementsByClassName("icon-block");
-	    for (var i = 0; i < iconList.length; i++) {
-		    document.querySelector('.icon-code').innerHTML = iconToUnicode;
-        }
+	for (var i=0; i<iconList.length; i++) {
+ 		iconList[i].innerHTML = "\\" + getComputedStyle(icon[i], ':before').content.slice(1, -1).codePointAt(0).toString(16);e    
+	}
     </script>
 </body>
 </html>
