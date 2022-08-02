@@ -69,6 +69,6 @@ m.mount(document.getElementById('page'), Page);
 
 window.addEventListener('load', function(event) {
 var iconList = document.getElementsByClassName('icon-code');
-var icon = document.getElementsByClassName('icon-md');
+var icon = document.getElementsByClassName('gi-3d-glasses');
 iconList[0].innerHTML = '\\' + getComputedStyle(icon[0], ':before').content.slice(1, -1).codePointAt(0).toString(16);   
 });
