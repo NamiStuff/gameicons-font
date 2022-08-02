@@ -68,9 +68,10 @@ const Page = {
 m.mount(document.getElementById('page'), Page);
 
 
-var result   = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
-var iconToUnicode = "\\" + result.slice(1, -1).codePointAt(0).toString(16);
+var icon = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
+var iconToUnicode = "\\" + icon.slice(1, -1).codePointAt(0).toString(16);
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('.icon-code').innerHTML = iconToUnicode;
-});
+var iconList = document.getElementsByClassName("icon-block");
+for (var i = 0; i < iconList.length; i++) {
+	document.querySelector('.icon-code').innerHTML = iconToUnicode;
+}
