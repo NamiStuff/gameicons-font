@@ -34,7 +34,7 @@ const List = {
             .glyphs()
             .sort((a, b) => a.file > b.file ? 1 : a.file < b.file ? -1 : 0)
             .filter(ctrl.visible)
-            .map(glyph => m('div.col-md-1.col-sm-2.col-xs-3.icon-block.text-center', [
+            .map(glyph => m('div.col-sm-2.icon-block', [
                 m(`i.gi.gi-${glyph.file}.icon-md`, { style: { color: ctrl.fgColor() }}),
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
@@ -66,3 +66,10 @@ const Page = {
 };
 
 m.mount(document.getElementById('page'), Page);
+
+var iconList = document.getElementsByClassName('icon-code');
+var icon = document.getElementsByClassName('icon-md')
+
+for (var i=0; i<iconList.length; i++) {
+    iconList[i].innerHTML = "\\" + getComputedStyle(icon[i], ':before').content.slice(1, -1).codePointAt(0).toString(16);    
+}
