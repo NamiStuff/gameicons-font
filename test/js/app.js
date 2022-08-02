@@ -39,7 +39,9 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m('span.icon-code'),
+                m(`span.icon-code.gi-${glyph.file}`, [
+                    m('span', 'unicode')]
+                 )
             ]));
     }
 };
