@@ -68,7 +68,7 @@ const Page = {
 m.mount(document.getElementById('page'), Page);
 
 var iconList = document.getElementsByClassName('icon-code');
-var icon = document.getElementsByClassName('icon-md')
+var icon = document.getElementsByClassName('icon-md');
 for (var i=0; i<iconList.length; i++) {
-	iconList[i].innerHTML = '\\' + getComputedStyle(icon[i], ':before').content.slice(1, -1).codePointAt(0).toString(16);   
+	iconList[i].innerHTML = '\\' + getComputedStyle(icon[0], ':before').content.slice(1, -1).codePointAt(0).toString(16);   
 }
