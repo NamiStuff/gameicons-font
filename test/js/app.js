@@ -37,7 +37,9 @@ const List = {
             .map(glyph => m('div.col-md-1.col-sm-2.col-xs-3.icon-block.text-center', [
                 m(`i.gi.gi-${glyph.file}.icon-md`, { style: { color: ctrl.fgColor() }}),
                 m('br'),
-                m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file)
+                m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
+                m('br'),
+                m('span.icon-code'),
             ]));
     }
 };
@@ -64,3 +66,8 @@ const Page = {
 };
 
 m.mount(document.getElementById('page'), Page);
+
+
+var result   = getComputedStyle(document.querySelector('.icon-md'), ':before').content;
+var iconToUnicode = "\\" + result.slice(1, -1).codePointAt(0).toString(16);
+document.querySelector('.icon-code').innerHTML = iconToUnicode;
