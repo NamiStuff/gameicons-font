@@ -47,6 +47,13 @@ const List = {
 };
 
 const Page = {
+    oncreate: function(vnode) {
+            var iconList = vnode.getElementsByClassName('icon-code');
+            var icon = vnode.getElementsByClassName('icon-md');
+            for (var i=0; i<iconList.length; i++) {
+                iconList[i].innerHTML = '\\' + getComputedStyle(icon[i], ':before').content.slice(1, -1).codePointAt(0).toString(16);   
+            }
+    },
     controller: function() {
         this.list = List.controller({
             visible: (item) => item.file.indexOf(this.filter.searchTerm()) > -1,
