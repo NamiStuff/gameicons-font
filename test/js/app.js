@@ -39,21 +39,25 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`span.icon-code.gi-${glyph.file}`, [
-                    m('span', 'unicode')]
+                m(`span.icon-code.gi-${glyph.file}`, {
+                         // All jQuery happens in external functions, attached like this:
+                         config : unicodeShow
+                       }
                  )
             ]));
     }
 };
 
+function unicodeShow ( element, init, context ){
+  // We don't want to add the class all the time, only the first time the element is created
+  if( !init ){
+    // Here we reference the element directly, and pass it to jQuery
+      var unicodeCont = window.getComputedStyle( element , ':before').content.replace(/"/g, '').charCodeAt(0).toString(16);
+      $( element ).text("\\" + unicodeCont);
+  }
+}
+
 const Page = {
-    oncreate: function(vnode) {
-            var iconList = vnode.getElementsByClassName('icon-code');
-            var icon = vnode.getElementsByClassName('icon-md');
-            for (var i=0; i<iconList.length; i++) {
-                iconList[i].innerHTML = '\\' + getComputedStyle(icon[i], ':before').content.slice(1, -1).codePointAt(0).toString(16);   
-            }
-    },
     controller: function() {
         this.list = List.controller({
             visible: (item) => item.file.indexOf(this.filter.searchTerm()) > -1,
