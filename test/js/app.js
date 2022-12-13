@@ -52,11 +52,13 @@ function unicodeShow (element, init, context){
   // We don't want to add the class all the time, only the first time the element is created
   if(!init){
     // Here we reference the element directly, and pass it to jQuery
-	 $.each($('.icon-block .icon-code'),function() {
- 	 	var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-	    	char = '\\' + s.charCodeAt(1).toString(16);
-		$(this).html(char);
-	 });
+	/*$(() => {
+		$('.icon-block .icon-code').each(function(){
+ 	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+	    		char = '\\' + s.charCodeAt(1).toString(16);
+			$(this).html(char);
+		});	
+	});*/
   }
 }
 
