@@ -3,7 +3,7 @@ An icon font for [game-icons/icons](https://github.com/game-icons/icons) made by
 
 # Usage
 
-* get the .css file
+* install the .css file
 * add an icon: `<i class="gi gi-anchor"></i>`
 
 # Want to build it yourself?
