@@ -52,10 +52,11 @@ function unicodeShow (element, init, context){
   // We don't want to add the class all the time, only the first time the element is created
   if(!init){
     // Here we reference the element directly, and pass it to jQuery
-      var unicodeCont = window.getComputedStyle(document.querySelector('.icon-code'), ':before').content.replace(/"/g, '').charCodeAt(0).toString(16);
-      $('.icon-block').each(function(){
-		$(this).find('.icon-code').html("\\" + unicodeCont);
-      });
+	 $.each($('.icon-block .icon-code'),function() {
+ 	 	var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+	    	char = '\\' + s.charCodeAt(1).toString(16);
+		$(this).html(char);
+	 });
   }
 }
 
