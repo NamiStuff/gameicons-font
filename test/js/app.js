@@ -59,16 +59,6 @@ function unicodeShow (element, init, context){
 			$(this).html(char);
 		});	
 	});*/
-	$(() => {
-		$('.icon-block i').click(function(){
- 	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-	    		char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).parents('.icon-block').find('.icon-code:empty').html(char);
-		});	
-		$('.icon-block i').click(function(){
-			$(this).parents('.icon-block').find('.icon-code:not(:empty)').empty();
-		});	
-	});
   }
 }
 
