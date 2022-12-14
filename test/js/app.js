@@ -39,7 +39,7 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`span.icon-code.gi-${glyph.file}`, {
+                m(`span.icon-code`, {
                          // All jQuery happens in external functions, attached like this:
                          config : unicodeShow
                        }
@@ -61,14 +61,9 @@ function unicodeShow (element, init, context){
 	});*/
 	$(() => {
 		$('.icon-block i').click(function(){
-			if (!$(this).parents('.icon-block').find('.icon-code').is(':empty')) {
-				$(this).parents('.icon-block').find('.icon-code').empty();
-			
-    			} else {
- 	 			var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-	    			char = '\\' + s.charCodeAt(1).toString(16);
-				$(this).parents('.icon-block').find('.icon-code:empty').html(char);
-			}	
+ 	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+	    		char = '\\' + s.charCodeAt(1).toString(16);
+			$(this).parents('.icon-block').find('.icon-code:empty').html(char);
 		});	
 	});
   }
