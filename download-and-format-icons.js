@@ -18,6 +18,7 @@ const iconFont = async () => {
     dest: './dist',
     fontName: 'game-icons',
     css: true,
+    ligature: true,
     templateOptions: {
       classPrefix: 'gi-',
       baseSelector: '.gi'
