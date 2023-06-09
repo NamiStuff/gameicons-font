@@ -1,5 +1,7 @@
 # GameIcons font
-An icon font for [game-icons/icons](https://github.com/game-icons/icons) made by [Seiyria](https://github.com/seiyria/gameicons-font). Unfortunately their GitHub repo is a bit outdated, so instead this pulls from the live site, using the [black on transparent SVGs](http://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip).
+An icon font for [game-icons/icons](https://github.com/game-icons/icons) made by [Seiyria](https://github.com/seiyria/gameicons-font) and updated for the needs of my sites.
+
+Since Game Icons GitHub repo is a bit outdated, this pulls from the live site, using the [black on transparent SVGs](http://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip).
 
 # Usage
 
