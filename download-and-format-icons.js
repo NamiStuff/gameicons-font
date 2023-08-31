@@ -24,7 +24,7 @@ const iconFont = async () => {
     fontName: 'game-icons',
     css: true,
     ligature: true,    
-		cssTemplate: TEMPLATES,
+    cssTemplate: TEMPLATES,
     templateOptions: {
       classPrefix: 'gi-',
       baseSelector: '.gi'
