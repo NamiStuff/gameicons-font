@@ -39,7 +39,7 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`i.icon-code.gi-${glyph.file}`, {
+                m(`span.icon-code.gi-${glyph.file}`, {
                          // All jQuery happens in external functions, attached like this:
                          config : unicodeShow
                        }
