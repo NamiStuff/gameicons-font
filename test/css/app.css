@@ -13,6 +13,6 @@
     gap: 10px;
 }
 
-.icon-block > br, .icon-code:before {
+.icon-block > br {
     display: none;
 }
