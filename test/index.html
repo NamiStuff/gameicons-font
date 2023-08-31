@@ -34,11 +34,14 @@
     <script>
 	document.addEventListener('DOMContentLoaded', () => {
   		setInterval(function(){
-		$('.icon-block .icon-code').each(function(){
-			var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-			char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).html(char);
-		});	
+			$('.icon-block .icon-code').each(function(){
+				var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+				char = '\\' + s.charCodeAt(1).toString(16);
+				$(this).html(char);
+			});	
+			$('.icon-block .icon-code').each(function(){
+				$(this).removeClass(char).addClass('icon-code');
+			});
 		},10);  
 	});
     </script>
