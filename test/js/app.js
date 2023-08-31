@@ -39,11 +39,12 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`span.icon-code.gi-${glyph.file}`, {
+                m(`i.icon-glyph.gi-${glyph.file}`, {
                          // All jQuery happens in external functions, attached like this:
                          config : unicodeShow
                        }
-                 )
+                 ),
+                m('span.icon-code')
             ]));
     }
 };
@@ -53,10 +54,10 @@ function unicodeShow (element, init, context){
   if(!init){
     // Here we reference the element directly, and pass it to jQuery
 	$(() => {
-		$('.icon-block .icon-code').each(function(){
+		$('.icon-block .icon-glyph').each(function(){
  	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
 	    		char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).html(char);
+			$(this).parents('.icon-block').find('.icon-code').html(char);
 		});	
 	});
 	/*$(() => {
