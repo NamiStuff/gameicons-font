@@ -39,7 +39,7 @@ const List = {
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`span.icon-code`, {
+                m(`span.icon-code.gi-${glyph.file}`, {
                          // All jQuery happens in external functions, attached like this:
                          config : unicodeShow
                        }
@@ -52,14 +52,14 @@ function unicodeShow (element, init, context){
   // We don't want to add the class all the time, only the first time the element is created
   if(!init){
     // Here we reference the element directly, and pass it to jQuery
-	/*$(() => {
+	$(() => {
 		$('.icon-block .icon-code').each(function(){
  	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
 	    		char = '\\' + s.charCodeAt(1).toString(16);
 			$(this).html(char);
 		});	
 	});
-	$(() => {
+	/*$(() => {
 		$('.icon-block i').click(function(){
  	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
 	    		char = '\\' + s.charCodeAt(1).toString(16);
