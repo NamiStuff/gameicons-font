@@ -12,11 +12,6 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
 
-const TEMPLATES_DIR = path.join(__dirname, '..', 'templates')
-const TEMPLATES = {
-	css: path.join(TEMPLATES_DIR, 'css.hbs'),
-}
-
 const iconFont = async () => {
   webfontsGenerator({
     files: fs.readdirSync('./test/svg').map(file => `./test/svg/${file}`),
@@ -24,7 +19,7 @@ const iconFont = async () => {
     fontName: 'game-icons',
     css: true,
     ligature: true,    
-    cssTemplate: TEMPLATES,
+    cssTemplate: './templates/css.hbs',
     templateOptions: {
       classPrefix: 'gi-',
       baseSelector: '.gi'
