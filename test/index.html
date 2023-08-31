@@ -39,6 +39,10 @@
 				char = '\\' + s.charCodeAt(1).toString(16);
 				$(this).html(char);
 			});	
+		},10);  
+	});
+	document.addEventListener('DOMContentLoaded', () => {
+  		setInterval(function(){	
 			$('.icon-block .icon-code').each(function(){
 				$(this).removeClass().addClass('icon-code');
 			});
