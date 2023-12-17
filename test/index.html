@@ -31,16 +31,5 @@
       <div id="page"></div>
     </div>
     <script src="./js/app.js"></script>
-    <script>
-	document.addEventListener('DOMContentLoaded', () => {
-  		setInterval(function(){
-			$('.icon-block .icon-code').each(function(){
-				var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-				char = '\\' + s.charCodeAt(1).toString(16);
-				$(this).html(char);
-			});	
-		},10);  
-	});
-    </script>
 </body>
 </html>
