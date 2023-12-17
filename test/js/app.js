@@ -65,14 +65,7 @@ function unicodeShow (element, init, context){
 	    		char = '\\' + s.charCodeAt(1).toString(16);
 			$(this).parents('.icon-block').find('.icon-code:empty').html(char);
 		});	
-	});*/
-	setInterval(function(){
-		$('.icon-block .icon-code').each(function(){
-			var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-			char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).html(char);
-		});	
-	},10);  
+	});*/ 
   }
 }
 
@@ -98,3 +91,13 @@ const Page = {
 };
 
 m.mount(document.getElementById('page'), Page);
+
+document.addEventListener('DOMContentLoaded', () => {
+  	setInterval(function(){
+		$('.icon-block .icon-code').each(function(){
+			var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+			char = '\\' + s.charCodeAt(1).toString(16);
+			$(this).html(char);
+		});	
+	},10);  
+});
