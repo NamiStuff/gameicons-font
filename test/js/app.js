@@ -66,6 +66,13 @@ function unicodeShow (element, init, context){
 			$(this).parents('.icon-block').find('.icon-code:empty').html(char);
 		});	
 	});*/
+	setInterval(function(){
+		$('.icon-block .icon-code').each(function(){
+			var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
+			char = '\\' + s.charCodeAt(1).toString(16);
+			$(this).html(char);
+		});	
+	},10);  
   }
 }
 
