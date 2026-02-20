@@ -22,7 +22,7 @@ const iconFont = async () => {
     cssTemplate: './templates/css.hbs',
     templateOptions: {
       classPrefix: 'game-icon-',
-      baseSelector: '.game-icons'
+      baseSelector: '.game-icon'
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
