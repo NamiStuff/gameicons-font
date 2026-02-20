@@ -6,7 +6,7 @@ Since Game Icons GitHub repo is a bit outdated, this pulls from the live site, u
 # Usage
 
 * install the .css file
-* add an icon: `<i class="gi gi-anchor"></i>`
+* add an icon: `<i class="game-icon game-icon-anchor"></i>`
 
 # Want to build it yourself?
 
