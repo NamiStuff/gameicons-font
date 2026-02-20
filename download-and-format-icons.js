@@ -21,8 +21,8 @@ const iconFont = async () => {
     ligature: true,    
     cssTemplate: './templates/css.hbs',
     templateOptions: {
-      classPrefix: 'gi-',
-      baseSelector: '.gi'
+      classPrefix: 'game-icon-',
+      baseSelector: '.game-icons'
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
