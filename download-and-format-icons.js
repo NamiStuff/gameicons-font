@@ -8,6 +8,8 @@ const { svg2png } = require('svg-png-converter');
 const webfontsGenerator = require('webfonts-generator');
 
 const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip';
+const fontClass = 'gi',
+      iconClass = 'gi',
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
@@ -21,8 +23,8 @@ const iconFont = async () => {
     ligature: true,    
     cssTemplate: './templates/css.hbs',
     templateOptions: {
-      classPrefix: 'gi-',
-      baseSelector: '.gi'
+      classPrefix: iconClass + '-',
+      baseSelector: '.' + fontClass
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
