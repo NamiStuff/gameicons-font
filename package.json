@@ -23,7 +23,7 @@
     "svg-png-converter": "^0.0.9",
     "unzipper": "^0.10.11",
     "webfonts-generator": "^0.4.0"
-  }
+  },
   "dependencies": {
     "prepend-file": "^2.0.0",
   }
