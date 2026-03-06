@@ -34,7 +34,6 @@ const iconFont = async () => {
   }, () => {
     console.log('webfont generated');
     fs.readdirSync('./dist').forEach(file => fs.copyFileSync(`./dist/${file}`, `./test/css/${file}`));
-    fs.prependFile('./test/js/app.js', fontClass);
   });
 
 };
@@ -79,6 +78,7 @@ const extractZip = async () => {
   allFiles.on('finish', () => {
     console.log('zip extracted');
     fs.writeFileSync('./test/data/glyphs.json', JSON.stringify(FILE_NAMES));
+    fs.appendFile('./test/js/app.js', fontClass);
     iconFont();
   });
 };
