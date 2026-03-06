@@ -11,7 +11,8 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 
 //const fontClass = 'gi',
 //      iconClass = 'gi';
-import { fontClass, iconClass } from '/download-and-format-icons.js';
+const fontClass = require(/download-and-format-icons.js);
+const iconClass = require(/download-and-format-icons.js);
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
