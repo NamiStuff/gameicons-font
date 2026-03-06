@@ -25,8 +25,8 @@ const iconFont = async () => {
     ligature: true,    
     cssTemplate: './templates/css.hbs',
     templateOptions: {
-      classPrefix: customClass.iconClass + '-',
-      baseSelector: '.' + customClass.fontClass
+      classPrefix: iconClass + '-',
+      baseSelector: '.' + fontClass
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
