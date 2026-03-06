@@ -11,8 +11,10 @@ Since Game Icons GitHub repo is a bit outdated, this pulls from the live site, u
 # Want to change the font or icon class?
 
 * go to `download-and-format-icons.js` and `test/js/app.js`
-* update const `iconClass` and / or `fontClass` with the name you prefer
-
+* update const `fontClass` and / or `iconClass` with the name/s you prefer
+  * `fontClass` corresponds to the class for the font itself (example: `.gi`)
+  * `iconClass` corresponds to the prefix used for each icon (example: `.gi-anchor`)
+    
 # Want to build it yourself?
 
 * npm install
