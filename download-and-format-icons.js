@@ -10,6 +10,7 @@ const webfontsGenerator = require('webfonts-generator');
 const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip';
 const fontClass = 'gi',
       iconClass = 'gi';
+export { fontClass, iconClass };
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
