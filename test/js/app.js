@@ -35,11 +35,11 @@ const List = {
             .sort((a, b) => a.file > b.file ? 1 : a.file < b.file ? -1 : 0)
             .filter(ctrl.visible)
             .map(glyph => m('div.col-sm-2.icon-block', [
-                m(`i.gi.gi-${glyph.file}.icon-md`, { style: { color: ctrl.fgColor() }}),
+                m(`i` + fontClass + `.` + iconClass + `-${glyph.file}.icon-md`, { style: { color: ctrl.fgColor() }}),
                 m('br'),
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
-                m(`span.icon-code.gi-${glyph.file}`, {
+                m(`span.icon-code.` + iconClass +`-${glyph.file}`, {
                          // All jQuery happens in external functions, attached like this:
                          config : unicodeShow
                        }
