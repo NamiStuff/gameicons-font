@@ -11,8 +11,7 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 
 //const fontClass = 'gi',
 //      iconClass = 'gi';
-const fontClass = require('/download-and-format-icons.js');
-const iconClass = require('/download-and-format-icons.js');
+const customClass = require('/app.js');
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
@@ -26,8 +25,8 @@ const iconFont = async () => {
     ligature: true,    
     cssTemplate: './templates/css.hbs',
     templateOptions: {
-      classPrefix: iconClass + '-',
-      baseSelector: '.' + fontClass
+      classPrefix: customClass.iconClass + '-',
+      baseSelector: '.' + customClass.fontClass
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
