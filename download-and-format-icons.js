@@ -13,7 +13,7 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 const fontClass = 'gi',
       iconClass = 'gi';
 
-const classConst = 'const fontClass = "' + fontClass + '";\r\nconst iconClass = "' + fontClass + '";';
+const classConst = 'const fontClass = "' + fontClass + '";\r\nconst iconClass = "' + fontClass + '";\r\n';
       
 
 const FILE_COUNTS = {};
