@@ -11,7 +11,8 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 
 const fontClass = 'gi',
       iconClass = 'gi';
-export { fontClass, iconClass };
+export { fontClass, iconClass,
+  transformIgnorePatterns: ['node_modules/(?!uuid)'], };
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
