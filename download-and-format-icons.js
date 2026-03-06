@@ -78,7 +78,7 @@ const extractZip = async () => {
   allFiles.on('finish', () => {
     console.log('zip extracted');
     fs.writeFileSync('./test/data/glyphs.json', JSON.stringify(FILE_NAMES));
-    fs.appendFile('./test/js/app.js', fontClass);
+    fs.appendFileSync('./test/js/app.js', fontClass);
     iconFont();
   });
 };
