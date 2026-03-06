@@ -1,4 +1,4 @@
-const fontClass = 'gi',
+const /*fontClass = 'gi',*/
       iconClass = 'gi';
 
 const Data = {
