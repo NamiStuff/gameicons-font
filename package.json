@@ -1,7 +1,6 @@
 {
   "name": "gameicons-font",
   "version": "1.0.0",
-  "type": "module",
   "description": "An icon font distribution of the SVGs from http://game-icons.net",
   "scripts": {
     "dev": "lite-server --config .bs-config.js",
