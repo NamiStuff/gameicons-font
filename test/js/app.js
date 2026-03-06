@@ -1,6 +1,5 @@
 const fontClass = 'gi',
       iconClass = 'gi';
-module.exports = { fontClass, iconClass };
 
 const Data = {
     glyphs: () => m.request({ method: 'GET', url: 'data/glyphs.json' })
