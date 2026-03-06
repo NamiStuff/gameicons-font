@@ -1,6 +1,5 @@
-//const fontClass = 'gi',
-//      iconClass = 'gi';
-import { fontClass, iconClass } from '/download-and-format-icons.js';
+const fontClass = 'gi',
+      iconClass = 'gi';
 
 const Data = {
     glyphs: () => m.request({ method: 'GET', url: 'data/glyphs.json' })
