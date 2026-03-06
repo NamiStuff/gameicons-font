@@ -51,10 +51,10 @@ const extractZip = async () => {
 
       if(FILE_COUNTS[name]) {
         FILE_COUNTS[name] += 1;
-        file = `${name}-${FILE_COUNTS[name]}`;
+        file = iconClass +`-${name}-${FILE_COUNTS[name]}`;
       } else {
         FILE_COUNTS[name] = 1;
-        file = `${name}`;
+        file = iconClass +`-${name}`;
       }
 
       const filedata = await entry.buffer();
