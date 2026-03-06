@@ -34,7 +34,7 @@ const iconFont = async () => {
   }, () => {
     console.log('webfont generated');
     fs.readdirSync('./dist').forEach(file => fs.copyFileSync(`./dist/${file}`, `./test/css/${file}`));
-    fs.prependFile('./test/js/app.js', fontClass, iconClass);
+    fs.prependFile('./test/js/app.js', fontClass);
   });
 
 };
