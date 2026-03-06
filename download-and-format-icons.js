@@ -4,14 +4,14 @@ const path = require('path');
 
 const fetch = require('node-fetch');
 const extract = require('unzipper');
+const prependFile = require('prepend-file');
 const { svg2png } = require('svg-png-converter');
 const webfontsGenerator = require('webfonts-generator');
 
 const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip';
 
-//const fontClass = 'gi',
-//      iconClass = 'gi';
-const customClass = require('./test/js/app.js');
+const fontClass = 'gi',
+      iconClass = 'gi';
 
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
@@ -34,6 +34,7 @@ const iconFont = async () => {
   }, () => {
     console.log('webfont generated');
     fs.readdirSync('./dist').forEach(file => fs.copyFileSync(`./dist/${file}`, `./test/css/${file}`));
+    fs.prependFile('./test/js/app.js', fontClass, iconClass);
   });
 
 };
