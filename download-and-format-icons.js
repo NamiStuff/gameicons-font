@@ -13,6 +13,9 @@ const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/gam
 const fontClass = 'gi',
       iconClass = 'gi';
 
+const classConst = 'const fontClass = "' + fontClass + '";\r\nconst iconClass = "' + fontClass + '";';
+      
+
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
 
@@ -78,7 +81,7 @@ const extractZip = async () => {
   allFiles.on('finish', () => {
     console.log('zip extracted');
     fs.writeFileSync('./test/data/glyphs.json', JSON.stringify(FILE_NAMES));
-    fs.appendFileSync('./test/js/app.js', 'const fontClass = "' + fontClass + '";');
+    fs.appendFileSync('./test/js/app.js', classConst);
     iconFont();
   });
 };
