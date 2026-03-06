@@ -42,7 +42,7 @@ const List = {
                 m(`a[target="_blank"][href="./svg/${glyph.file}.svg"]`, glyph.file),
                 m('br'),
                 m(`span.icon-code.` + iconClass +`-${glyph.file}`, {
-                         // All jQuery happens in external functions, attached like this:
+                         // jQuery function to generate unicode
                          config : unicodeShow
                        }
                  )
@@ -54,20 +54,11 @@ function unicodeShow (element, init, context){
   // We don't want to add the class all the time, only the first time the element is created
   if(!init){
     // Here we reference the element directly, and pass it to jQuery
-	/*$(() => {
-		$('.icon-block .icon-code').each(function(){
- 	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-	    		char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).html(char);
-		});	
-	});
-	$(() => {
-		$('.icon-block i').click(function(){
- 	 		var s = window.getComputedStyle(this, ':before').getPropertyValue('content'),
-	    		char = '\\' + s.charCodeAt(1).toString(16);
-			$(this).parents('.icon-block').find('.icon-code:empty').html(char);
-		});	
-	});*/ 
+	$(element).each(function(){
+		var s = window.getComputedStyle(element, ':before').getPropertyValue('content'),
+		char = '\\' + s.charCodeAt(1).toString(16);
+		$(element).html(char);
+	});	
   }
 }
 
@@ -94,6 +85,8 @@ const Page = {
 
 m.mount(document.getElementById('page'), Page);
 
+/*
+// Old jQuery function to generate unicode outside of the Mithril code 
 document.addEventListener('DOMContentLoaded', () => {
   	setInterval(function(){
 		$('.icon-block .icon-code').each(function(){
@@ -103,3 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
 		});	
 	},10);  
 });
+*/
