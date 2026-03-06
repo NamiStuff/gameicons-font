@@ -1,3 +1,5 @@
+const fontClass = 'gi',
+      iconClass = 'gi';
 
 const Data = {
     glyphs: () => m.request({ method: 'GET', url: 'data/glyphs.json' })
