@@ -9,6 +9,11 @@ const webfontsGenerator = require('webfonts-generator');
 
 const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip';
 
+// Variables to define the font class and icon prefix
+const fontClass = 'gi',
+      iconClass = 'gi';
+const classConst = 'const fontClass = "' + fontClass + '";\r\nconst iconClass = "' + fontClass + '";\r\n';
+
 const FILE_COUNTS = {};
 const FILE_NAMES = [];
 
@@ -21,8 +26,8 @@ const iconFont = async () => {
     ligature: true,    
     cssTemplate: './templates/css.hbs',
     templateOptions: {
-      classPrefix: 'game-icon-',
-      baseSelector: '.game-icon'
+      classPrefix: iconClass + '-',
+      baseSelector: '.' + fontClass
     },
     types: ['woff', 'eot', 'ttf'],
     startCodepoint: 0xE000,
@@ -74,6 +79,7 @@ const extractZip = async () => {
   allFiles.on('finish', () => {
     console.log('zip extracted');
     fs.writeFileSync('./test/data/glyphs.json', JSON.stringify(FILE_NAMES));
+    fs.appendFileSync('./test/js/app.js', classConst);
     iconFont();
   });
 };
