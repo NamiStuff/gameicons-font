@@ -1,11 +1,11 @@
 
-const fs = require('fs');
-const path = require('path');
+const fs = import('fs');
+const path = import('path');
 
-const fetch = require('node-fetch');
-const extract = require('unzipper');
-const { svg2png } = require('svg-png-converter');
-const webfontsGenerator = require('webfonts-generator');
+const fetch = import('node-fetch');
+const extract = import('unzipper');
+const { svg2png } = import('svg-png-converter');
+const webfontsGenerator = import('webfonts-generator');
 
 // const BASE_URL = 'https://game-icons.net/archives/svg/zip/000000/transparent/game-icons.net.svg.zip';
 const BASE_URL = 'https://github.com/NamiStuff/gameicons-font/raw/refs/heads/master/files/game-icons.net.svg.zip';
