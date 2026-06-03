@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20, 22, 24]
+        node-version: [20]
 
     steps:
       - uses: actions/checkout@v6
@@ -31,7 +31,7 @@ jobs:
       - run: npm run build:font
 
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: gh-pages
           build_dir: ./test
