@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [12]
 
     steps:
       - uses: actions/checkout@v6
@@ -25,6 +25,8 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
+        env:
+            FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
           
       - run: npm install
 
@@ -36,4 +38,4 @@ jobs:
           target_branch: gh-pages
           build_dir: ./test
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
