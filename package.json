@@ -21,7 +21,7 @@
   "devDependencies": {
     "node-fetch": "^2.6.7",
     "svg-png-converter": "^0.0.9",
-    "unzipper": "^0.10.11",
+    "unzipper": "^0.12.5",
     "webfonts-generator": "^0.4.0"
   }
 }
