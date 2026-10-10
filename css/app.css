@@ -1,0 +1,18 @@
+
+.icon-md {
+    font-size: 64px;
+}
+
+.icon-block {
+    min-height: 150px;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-block > br, .icon-code:before {
+    display: none;
+}
